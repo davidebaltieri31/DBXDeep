@@ -1,13 +1,8 @@
-//#include "DBX_Neuron.h"
-//#include "DBX_Cost.h"
-//#include "DBX_Layer.h"
 #include "Dataset.h"
-//#include "DBX_Network.h"
-#include <opencv2\opencv.hpp>
-//#include "TensorTest.h"
 #include "DBXNetwork.h"
 #include "DBXCost.h"
 #include "DBX_Viz.h"
+
 int main(int argc, char** argv)
 {
 	ColorGradient::add_color(0.0f, cv::Vec3b(0,0,255));
@@ -66,14 +61,6 @@ int main(int argc, char** argv)
 	//mn.gradient_check_full(3, training_params, 0.0001, 10);
 	//mn.gradient_check_conv(1, training_params, 0.00001, 5);
 
-	/*Network n;
-	std::vector<int> layers;
-	layers.push_back(784);
-	layers.push_back(50);
-	layers.push_back(10);
-	n.init(layers, new SigmoidNeuron(), new CrossEntropyCost(new SigmoidNeuron()));
-	n.SGD(training_data, 5, 10, 0.5, 5.0, 0.1, test_data);*/
-
 	/*MultiLayerNetwork mn;
 	mn.set_loader(new MNISTLoader());
 	mn.load_dataset();
@@ -88,44 +75,6 @@ int main(int argc, char** argv)
 	training_params.set_double_param("lambda", 5.0);
 	mn.train(training_params);*/
 
-	cv::waitKey(-1);
-
-	/*Network<SigmoidNeuron,CrossEntropyCost<SigmoidNeuron>> n;
-	std::vector<int> layers;
-	layers.push_back(784);
-	layers.push_back(2500);
-	layers.push_back(10);
-	n.init(layers);
-
-	//for (int i = 0; i < 100; ++i)
-	//	n.SGD(training_data, 1, 10, i*0.003, test_data);
-	n.SGD(training_data, 20, 10, 0.5, 5.0, 0.1, test_data);
-
-	n.add_layer(2000);
-
-	n.SGD(training_data, 20, 10, 0.2, 5.0, 0.1, test_data);
-	
-	n.add_layer(1500);
-
-	n.SGD(training_data, 20, 10, 0.1, 5.0, 0.1, test_data);
-
-	n.add_layer(1000);
-
-	n.SGD(training_data, 20, 10, 0.1, 5.0, 0.1, test_data);
-
-	n.add_layer(500);
-
-	n.SGD(training_data, 20, 10, 0.1, 5.0, 0.1, test_data);*/
-
-	/*int num_corretti = 0;
-	for (int i = 0; i < test_data.size(); ++i) {
-		myMat result = n.feedforward(test_data[i].first);
-		int r1 = n.maxVal(result);
-		int r2 = n.maxVal(test_data[i].second);
-		if (r1 == r2) ++num_corretti;
-	}
-
-	std::cout << "precision:" << float(num_corretti) / float(test_data.size())*100.0f << "/%" << std::endl;
-	*/
+	std::cin.ignore();
 	return 0;
 }
