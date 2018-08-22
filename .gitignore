@@ -1,0 +1,12 @@
+*.db
+*.vspx
+*.vsp
+Release
+x64
+*.opendb
+.vs
+Debug
+*.psess
+*.user
+*.filters
+BAK
