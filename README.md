@@ -22,4 +22,5 @@ Qadratic, Cross Entropy
 SGD, AdaGrad, Modified AdaGrad, AdaDelta, RMSProp, Adam
 
 ## Still Missing
-Dropout. If I ever have the time I'll implement it, I promise.
+- Model Saving/Loading
+- Dropout. If I ever have the time I'll implement it, I promise.
